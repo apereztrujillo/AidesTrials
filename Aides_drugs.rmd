@@ -20,13 +20,64 @@ Three new preventative aides drugs were tested in clinical trials in 2015. The t
 
 
 # Genvoyabub
+We will subset the data by sex to see if the drug is sex specific
 
-We will subset the data by sex to see if the drug is sex specific.
+```{r}
+tabinfgroall<- xtabs(~infected+group,data=Genvoyabub)
+barchartGC(tabinfgroall,type="percent")
+```
+ 
+   The percentage of people getting aids doesn't change significatly between taking the drug or taking the pacebo. 
+
+```{r}
+rowPerc(tabinfgroall)
+colPerc(tabinfgroall)
+```
+We fail to reject the null hypothesis, the p-Value is almost 50%, so this happens about 50% of the time. 
+
+
+```{r}
+chisqtestGC(tabinfgroall)
+```
+The p-Value of .5735 says that if the null hypothesis is true, we should expect results like this about 57% of the time. This is not enough evidence to reject the null hypothesis, so we are going to fail to reject it. 
+
+```{r}
+infgromale<- filter(Genvoyabub,sex=="M")
+tabingromale<- xtabs(~infected+group,data=infgromale)
+barchartGC(tabingromale,type="percent")
+```
+
+```{r}
+rowPerc(tabingromale)
+colPerc(tabingromale)
+```
+
+```{r}
+chisqtestGC(tabingromale)
+```
+
+
+```{r}
+infgrofemale <- filter(Genvoyabub,sex == "F")
+tabinfgrofemale <-xtabs(~infected+group,data=infgrofemale)
+barchartGC(tabinfgrofemale,type="percent")
+```
+
+
+```{r}
+rowPerc(tabinfgrofemale)
+colPerc(tabinfgrofemale)
+```
+
+```{r}
+chisqtestGC(tabinfgrofemale)
+```
 
 
 # Atriplavast
 
 We will subset the data by sex to see if the drug is sex specific.
+
 
 
 
