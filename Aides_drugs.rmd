@@ -78,7 +78,52 @@ chisqtestGC(tabinfgrofemale)
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+atripall<- xtabs(~infected+group,data=Atriplavast)
+barchartGC(atripall,type="percent")
+```
+ 
+```{r}
+rowPerc(atripall)
+colPerc(atripall)
+```
 
+
+```{r}
+chisqtestGC(atripall)
+```
+
+```{r}
+atripM<- filter(Genvoyabub,sex=="M")
+atripM2<- xtabs(~infected+group,data=atripM)
+barchartGC(atripM2,type="percent")
+```
+
+```{r}
+rowPerc(atripM2)
+colPerc(atripM2)
+```
+
+
+```{r}
+chisqtestGC(atripM2)
+```
+
+
+```{r}
+atripF<- filter(Genvoyabub,sex=="F")
+atripF2<- xtabs(~infected+group,data=atripF)
+barchartGC(atripF2,type="percent")
+```
+
+```{r}
+rowPerc(atripF2)
+colPerc(atripF2)
+```
+
+```{r}
+chisqtestGC(atripF2)
+```
 
 
 # abacavirinol
