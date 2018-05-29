@@ -90,15 +90,27 @@ atripall<- xtabs(~infected+group,data=Atriplavast)
 barchartGC(atripall,type="percent")
 ```
  
+ It appears that the number of people who took the Atriplavast had a smaller possibility of getting aids then those who took the placebo. For those who didn't get aids, it didn't make a difference wether they had the Atriplavast or the placebo.    
+ 
+ 
+ 
+ 
+ 
 ```{r}
 rowPerc(atripall)
 colPerc(atripall)
 ```
 
+This data shows that there is a difference of about 6% between those who got aids and took the drug, then those who took the placebo. For those who didn't take the placebo or the drug, the possibility of getting aids appears to be the same.   
+
 
 ```{r}
-chisqtestGC(atripall)
+chisqtestGC(atripall, graph=TRUE)
 ```
+
+We do not have enough evidance to reject the null hypothesis so we fail to reject it.   
+
+
 
 ```{r}
 atripM<- filter(Genvoyabub,sex=="M")
@@ -106,15 +118,28 @@ atripM2<- xtabs(~infected+group,data=atripM)
 barchartGC(atripM2,type="percent")
 ```
 
+
+
+This graph shows no significant difference between the Males who got aids and got the placebo and the Males who got aids and took the drug. I appears that the drug it's not making a differnce, on preventing aids.    
+
+
+
+
 ```{r}
 rowPerc(atripM2)
 colPerc(atripM2)
 ```
 
+This data shows that the same number of people who got aids took the placebo and  the drug got aid and that the same number of males who didn't take either of them, got aids.   
+
 
 ```{r}
-chisqtestGC(atripM2)
+chisqtestGC(atripM2,graph=TRUE)
 ```
+
+This test show that there is not a strong evidence against the null hypothesis, therefore we fail to reject it.   
+
+
 
 
 ```{r}
@@ -123,14 +148,25 @@ atripF2<- xtabs(~infected+group,data=atripF)
 barchartGC(atripF2,type="percent")
 ```
 
+This chart shows that there is a slight difference between the Females who got aids and the females who didn't get aids. It appears that the drug is making no significant difference in preventing aids.     
+
+
+
 ```{r}
 rowPerc(atripF2)
 colPerc(atripF2)
 ```
+This data shows that there is less then 1% difference in the number of Females who got aids and took the Atriplavast drug and those who got aids and took the placebo. It show that there is no difference in those who got aids and didn't take the placebo or the drug.   
+
+
 
 ```{r}
-chisqtestGC(atripF2)
+chisqtestGC(atripF2,graph=TRUE)
 ```
+
+This test shows that everytime we do this, we will get the same results 50% of the time. The evidence is not significaant and we fail to reject the null hypothesis.   
+
+
 
 
 # abacavirinol
