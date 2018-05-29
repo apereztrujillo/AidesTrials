@@ -27,14 +27,13 @@ tabinfgroall<- xtabs(~infected+group,data=Genvoyabub)
 barchartGC(tabinfgroall,type="percent")
 ```
  
-   The percentage of people getting aids doesn't change significatly between taking the drug or taking the pacebo. 
+   The percentage of people getting aids doesn't change significatly between taking the drug or taking the pacebo. As the chart shows there is almost no diference on the people that didn't get aids, who took the drug or who took the placebo. The same situation for the people who took the drugs, there is proably a 5 percent higher in those who took the drug than those who took the placebo.
 
 ```{r}
 rowPerc(tabinfgroall)
 colPerc(tabinfgroall)
 ```
-We fail to reject the null hypothesis, the p-Value is almost 50%, so this happens about 50% of the time. 
-
+The Percentage shown here demonstrate that it didn't make a significant difference wether the people took the placebo or the drugs. 
 
 ```{r}
 chisqtestGC(tabinfgroall)
@@ -46,11 +45,19 @@ infgromale<- filter(Genvoyabub,sex=="M")
 tabingromale<- xtabs(~infected+group,data=infgromale)
 barchartGC(tabingromale,type="percent")
 ```
+The charts show that there is no suffcient evidence of the difference the drug or the placebo made on Males. The aids chart is about 1% difference between those who took the placebo and those who took the drug. For the males that didn't get aids, it made no difference at all whether they took the placebo or the drug. 
+
+
+
+
 
 ```{r}
 rowPerc(tabingromale)
 colPerc(tabingromale)
 ```
+
+
+
 
 ```{r}
 chisqtestGC(tabingromale)
