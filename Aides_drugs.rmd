@@ -47,14 +47,24 @@ tabingromale<- xtabs(~infected+group,data=infgromale)
 barchartGC(tabingromale,type="percent")
 ```
 
+This chart show that it made no difference for the Males who took the Genvoyabun drug and got aids and those who didn't get aids and didn't take the drug. 
+
+
+
 ```{r}
 rowPerc(tabingromale)
 colPerc(tabingromale)
 ```
 
+This data shows that the Males who took the drug or the placebo had the same chance of getting aids. Taking the drug had no significant difference then those who took the placebo and didn't get aids. 
+
+
 ```{r}
-chisqtestGC(tabingromale)
+chisqtestGC(tabingromale,graph=TRUE)
 ```
+
+This test shows that there is no significant evidence to reject the null hypothesis, so we fail to reject the null hypothesis. The p-value shows that we will get this same results 100% of the time. 
+
 
 
 ```{r}
@@ -63,15 +73,25 @@ tabinfgrofemale <-xtabs(~infected+group,data=infgrofemale)
 barchartGC(tabinfgrofemale,type="percent")
 ```
 
+The chart shows little differnce between the percent of Females who took the drug and got aids and the percentage who took the placebo and got aids. It show that for the females who didn't get aids, it didn't make a difference wether they took the drug or the placebo. 
+
+
 
 ```{r}
 rowPerc(tabinfgrofemale)
 colPerc(tabinfgrofemale)
 ```
 
+
+
+
+
 ```{r}
 chisqtestGC(tabinfgrofemale)
 ```
+
+
+
 
 
 # Atriplavast
