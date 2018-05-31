@@ -90,7 +90,7 @@ atripall<- xtabs(~infected+group,data=Atriplavast)
 barchartGC(atripall,type="percent")
 ```
  
- It appears that the number of people who took the Atriplavast had a smaller possibility of getting aids then those who took the placebo. For those who didn't get aids, it didn't make a difference wether they had the Atriplavast or the placebo.    
+ It appears that the number of people who took the Atriplavast had  smaller possibility of getting aids then those who took the placebo. For those who didn't get aids, it didn't make a difference wether they had the Atriplavast or the placebo.    
  
  
  
@@ -108,21 +108,17 @@ This data shows that there is a difference of about 6% between those who got aid
 chisqtestGC(atripall, graph=TRUE)
 ```
 
-We do not have enough evidance to reject the null hypothesis so we fail to reject it.   
+We do not have enough evidence to reject the null hypothesis so we fail to reject it.  It shows that every time we make this test we will get the same results 6 percent of the time. 
 
 
 
 ```{r}
-atripM<- filter(Genvoyabub,sex=="M")
+atripM<- filter(Atriplavast,sex=="M")
 atripM2<- xtabs(~infected+group,data=atripM)
 barchartGC(atripM2,type="percent")
 ```
 
-
-
-This graph shows no significant difference between the Males who got aids and got the placebo and the Males who got aids and took the drug. I appears that the drug it's not making a differnce, on preventing aids.    
-
-
+This graph shows that the percentage of Males who got aids is lower for those who took the drug then those who took the placebo. For those who didn't get aids, it didn't make a difference if they took the placebo or the drug. 
 
 
 ```{r}
@@ -130,33 +126,31 @@ rowPerc(atripM2)
 colPerc(atripM2)
 ```
 
-This data shows that the same number of people who got aids took the placebo and  the drug got aid and that the same number of males who didn't take either of them, got aids.   
-
+This data shows that the Males who took the drug had about 50% less chance of getting aids versus the ones who took the placebo. As for the males that didn't get aids, it didn't make a difference if they took the drug or the placebo.
 
 ```{r}
 chisqtestGC(atripM2,graph=TRUE)
 ```
 
-This test show that there is not a strong evidence against the null hypothesis, therefore we fail to reject it.   
+This test shows that there is enough evidence to reject the null hypothesis. 
 
 
 
 
 ```{r}
-atripF<- filter(Genvoyabub,sex=="F")
+atripF<- filter(Atriplavast,sex=="F")
 atripF2<- xtabs(~infected+group,data=atripF)
 barchartGC(atripF2,type="percent")
 ```
 
-This chart shows that there is a slight difference between the Females who got aids and the females who didn't get aids. It appears that the drug is making no significant difference in preventing aids.     
-
+This chart shows that the percentage of Females who got aids and took the drug is higher then those who got aids and took the placebo. This shows that the drug has no effect on preventing aids. For the Females who didn't get aids, it didn't make a difference if they took the drug or the placebo.
 
 
 ```{r}
 rowPerc(atripF2)
 colPerc(atripF2)
 ```
-This data shows that there is less then 1% difference in the number of Females who got aids and took the Atriplavast drug and those who got aids and took the placebo. It show that there is no difference in those who got aids and didn't take the placebo or the drug.   
+This data shows that the drug is making no difference in preventing aids because the perecentage of Females getting aids is higher for those who took the drug versus those who took the placebo.   
 
 
 
@@ -164,7 +158,7 @@ This data shows that there is less then 1% difference in the number of Females w
 chisqtestGC(atripF2,graph=TRUE)
 ```
 
-This test shows that everytime we do this, we will get the same results 50% of the time. The evidence is not significaant and we fail to reject the null hypothesis.   
+This test shows that there is enough evidance to reject the null hypothesis. 
 
 
 
