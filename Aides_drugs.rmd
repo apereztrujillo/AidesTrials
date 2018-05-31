@@ -22,7 +22,76 @@ Three new preventative aides drugs were tested in clinical trials in 2015. The t
 # Genvoyabub
 
 We will subset the data by sex to see if the drug is sex specific.
+```{r}
+tabinfgroall<- xtabs(~infected+group,data=Genvoyabub)
+barchartGC(tabinfgroall,type="percent")
+```
+ 
+   The Genvoyabub drug doesn't show to make a significant effect on preventing aids. There is no significant difference on the percentage of people who got aids and took the drug and those who got aids and took the placebo. There is definetely no difference between those who didn't get aids and took the drug or the placebo. 
 
+```{r}
+rowPerc(tabinfgroall)
+colPerc(tabinfgroall)
+```
+This data shows that there is 5% less people getting aids of the ones who took the drug versus the ones who took the placebo. In regards to those who didn't get aids there is no difference between the people who took the placebo and those who took the drug. 
+
+```{r}
+chisqtestGC(tabinfgroall, graph=TRUE)
+```
+
+
+The p-Value of .5735 says that if the null hypothesis is true, we should expect results like this about 57% of the time. This is not enough evidence to reject the null hypothesis, so we are going to fail to reject it. 
+
+```{r}
+infgromale<- filter(Genvoyabub,sex=="M")
+tabingromale<- xtabs(~infected+group,data=infgromale)
+barchartGC(tabingromale,type="percent")
+```
+
+This chart shows that for the Males that got aids, it didn't make a difference if they took the drug or the placebo. For the Males that didn't get aids, it didn't make a difference if they took the drug or the placebo either. 
+
+
+```{r}
+rowPerc(tabingromale)
+colPerc(tabingromale)
+```
+
+This data shows that the Males who took the drug or the placebo had the same chance of getting aids. Taking the drug or the placebo didn't make a difference for those who didn't get aids either. 
+
+
+```{r}
+chisqtestGC(tabingromale,graph=TRUE)
+```
+
+This test shows that there is no significant evidence to reject the null hypothesis, so we fail to reject the null hypothesis. The p-value shows that we will get this same results 100% of the time. 
+
+
+
+```{r}
+infgrofemale <- filter(Genvoyabub,sex == "F")
+tabinfgrofemale <-xtabs(~infected+group,data=infgrofemale)
+barchartGC(tabinfgrofemale,type="percent")
+```
+
+The chart shows little differnce between the percent of Females who took the drug and got aids and the percentage who took the placebo and got aids. It show that for the females who didn't get aids, it didn't make a difference if they took the drug or the placebo. 
+
+
+
+```{r}
+rowPerc(tabinfgrofemale)
+colPerc(tabinfgrofemale)
+```
+
+This data shows that there is about 7% less possibilities for the Females who took the drug to get aids versus those who took the placebo. For the females who didn't get aids, it didn't make a difference if they took the drug or the placebo.
+
+
+
+```{r}
+chisqtestGC(tabinfgrofemale,graph=TRUE)
+```
+
+
+This test shows that there is no significant evidence to reject the null hypothesis, so we fail to reject the null hypothesis. The p-value shows that every time we make this test the we will get the same results about 50% of the time.
 
 # Atriplavast
 
