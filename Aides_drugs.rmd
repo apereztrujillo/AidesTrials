@@ -85,8 +85,70 @@ We will subset the data by sex to see if the drug is sex specific.
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+Abacaall<- xtabs(~infected+group,data=abacavirinol)
+barchartGC(Abacaall,type="percent")
+
+```
+
+The chart shows that the drug makes no diference for those who got aids or for those who didn't get aids. 
+
+```{r}
+rowPerc(Abacaall)
+colPerc(Abacaall)
+```
+
+This data shows that the drug didn't make an impact on preventing aids. The same number of people that got aids took the drug and the placebo.
+
+```{r}
+chisqtestGC(Abacaall, graph=TRUE)
+```
+
+The results of this test give a P-Value of .8942 percent, which means that we will get this same result about 89% of the time. We do not have enough evidence to reject the null hypothesis, therefore we fail to reject the null hypothesis.
 
 
+```{r}
+abacamale<- filter(abacavirinol,sex=="M")
+abacamale2<- xtabs(~infected + group, data=abacamale)
+barchartGC(abacamale2,type="percent")
+```
+
+This chart shows that the drug is having no effect on preventing aids. The percentage of the Males who got aids is higher for those who took the drug then for those who took the placebo. For those who didn't get aids, there is no difference if they took the placebo and the drug.
 
 
+```{r}
+rowPerc(abacamale2)
+colPerc(abacamale2)
+```
 
+This data shows that the drug has no effect on preventing aids. The percentage of the people who got aids is higher for those who took the drug then for the ones who took the palcebo. It appears that the drug is influencing on males getting aids.
+
+
+```{r}
+chisqtestGC(abacamale2, graph=TRUE)
+```
+
+There is no significant evidence, the P-Value of .09 makes us fail to reject the null hypothesis. 
+
+
+```{r}
+abacafemale<- filter(abacavirinol,sex=="F")
+abacafemale2<- xtabs(~infected + group, data=abacafemale)
+barchartGC(abacafemale2,type="percent")
+```
+
+This chart shows that the Females percentage of those who got aids is lower for those who took the drug versus those who took the placebo. For the females who didn't get aids, it didn't make a difference for those who took the drug or the placebo.
+
+
+```{r}
+rowPerc(abacafemale2)
+colPerc(abacafemale2)
+```
+
+This data shows that the drug does help Females prevent aids. The percentage of Females who got aids and took the placebo is twice a high then those who took the drug and got aids. 
+
+```{r}
+chisqtestGC(abacafemale2, graph=TRUE)
+```
+
+This test shows that we have enough evidence to reject the null hypothesis. 
