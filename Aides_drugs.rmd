@@ -1,7 +1,7 @@
 ---
 title: "Aides Tests"
-author: "Dr K"
-date: "May 24, 2017"
+author: "Aleyda Perez"
+date: "May 31, 2018"
 output: html_document
 ---
 
@@ -235,6 +235,8 @@ chisqtestGC(abacafemale2, graph=TRUE)
 
 This test shows that we have enough evidence to reject the null hypothesis. 
 
+# conclusions
 
+In conclusion the Genvoyabub drug did not work for anyone. Males should be taking Atriplavast, because it works positvely for them. Females should not take it because it works negatively for them. The Abacavirinol works positvely for females but negatively for males. The drugs recomended for males is Atriplavast and the drug for females is Abacavirinol.
 
 
